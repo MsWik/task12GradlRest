@@ -20,6 +20,14 @@ public class User implements Serializable {
     private String userpic;
     private String email;
 
+
+
+    private String gender;
+    private String locale;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime lastVisit;
+
+
     public String getId() {
         return id;
     }
@@ -64,6 +72,10 @@ public class User implements Serializable {
         return locale;
     }
 
+    public User() {
+    }
+
+
     public void setLocale(String locale) {
         this.locale = locale;
     }
@@ -75,9 +87,4 @@ public class User implements Serializable {
     public void setLastVisit(LocalDateTime lastVisit) {
         this.lastVisit = lastVisit;
     }
-
-    private String gender;
-    private String locale;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime lastVisit;
 }
